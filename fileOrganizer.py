@@ -6,7 +6,8 @@ from getTargetDir import get_target_dir, extensions_dict
 
 PATH = None
 # Diretórios que não serão movidos para a pasta Directories
-EXCLUDED_DIRS = ["Other","Directories", ".git", "__pycache__", "venv"] + [v.split("/")[0] for v in extensions_dict.values()]
+EXCLUDED_DIRS = set(["Other","Directories", ".git", "__pycache__", "venv"] + [v.split("/")[0] for v in extensions_dict.values()])
+
 
 def main():
     global PATH
